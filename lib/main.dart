@@ -47,8 +47,8 @@ class _LogInState extends State<LogIn> {
         ),
       );
     } else {
-      final errorMessage = jsonDecode(response.body)['message'];
-      showSnackBar(context, Text(errorMessage));
+      String errorMessage ='Check your email and password and try again.';
+      showSnackBar(context, errorMessage);
     }
   }
 
@@ -139,9 +139,9 @@ class _LogInState extends State<LogIn> {
   }
 }
 
-void showSnackBar(BuildContext context, Text text) {
+void showSnackBar(BuildContext context, String errorMessage) {
   final snackBar = SnackBar(
-    content: text,
+    content: Text(errorMessage), // errorMessage를 Text 위젯으로 변환
     backgroundColor: Color.fromARGB(255, 112, 48, 48),
   );
 
