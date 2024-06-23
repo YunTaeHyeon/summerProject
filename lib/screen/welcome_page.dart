@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screen/login_screen.dart';
+import 'signUp_screen.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -58,6 +59,27 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 child: const Text('Log in'),
+              ),
+              const SizedBox(height: 20.0),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => SignUp(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white,
+                  minimumSize: Size(200, 50),
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                child: const Text('Sign up'),
               ),
             ],
           )
