@@ -127,7 +127,26 @@ class _SignUpState extends State<SignUp> {
                                 backgroundColor: Colors.orangeAccent,
                               ),
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => LogIn(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                                'Already have an account? Log in.',
+                                style: TextStyle(color: Colors.blue
+                                , fontSize: 15.0
+                                ),
+                            ),
+                          ),
                         ],
                       );
                     }),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../screen/next_page.dart';
+import 'signUp_screen.dart';
 
 class LogIn extends StatefulWidget {
   @override
@@ -110,7 +111,26 @@ class _LogInState extends State<LogIn> {
                                 backgroundColor: Colors.orangeAccent,
                               ),
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => SignUp(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'Are you new here? Sign up now',
+                              style: TextStyle(color: Colors.blue
+                                  , fontSize: 15.0
+                              ),
+                            ),
+                          ),
                         ],
                       );
                     }),
