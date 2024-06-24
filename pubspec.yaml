@@ -63,6 +63,8 @@ flutter:
   assets:
     - images/quiz.jpeg
     - images/donut.png
+    - images/kakaoLogin.png
+    - images/hanip.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
