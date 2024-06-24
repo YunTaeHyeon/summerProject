@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screen/login_screen.dart';
 import 'signUp_screen.dart';
+import 'next_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -8,82 +9,41 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Welcome'),
-        elevation: 0.0,
-        backgroundColor: Colors.redAccent,
-        centerTitle: true,
-        actions: <Widget>[
-          /*
-          IconButton(
-            icon: const Icon(Icons.person_add),
-            onPressed: () {
-              Navigator.pushNamed(context, '/signup');
-            },
-          ),
-
-           */
-        ],
-      ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-            // 웰컴 인사말과 로그인 버튼을 Column으로 묶어 세로로 배치
+            mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const Image(
-                image: AssetImage('images/donut.png'),
-                width: 300.0,
-                height: 300.0,
+              const SizedBox(height: 100.0),
+              Image.asset(
+                'images/donut.png', // Replace with your Kakao login image asset path
+                width: 200.0,
+                height: 200.0,
+              ),
+              const SizedBox(height: 20.0),
+              const Text(
+                '뉴스가 길다면',
+                style: TextStyle(fontSize: 30.0),
               ),
               const Text(
-                'Welcome to the Donut Shop',
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                '요약해서 한입에',
+                style: TextStyle(fontSize: 24.0),
               ),
-              const SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => LogIn(),
-                    ),
-                  );
+              const SizedBox(height: 100.0),
+              GestureDetector(
+                onTap: () {
+                  // Handle Kakao login tap
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => NextPage()));
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  minimumSize: Size(200, 50),
-                  textStyle: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Image.asset(
+                  'images/kakaoLogin.png', // Replace with your Kakao login button image asset path
+                  height: 100.0,
                 ),
-                child: const Text('Log in'),
-              ),
-              const SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => SignUp(),
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  minimumSize: Size(200, 50),
-                  textStyle: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                child: const Text('Sign up'),
               ),
             ],
-          )
-        )
+          ),
+        ),
       ),
     );
   }
