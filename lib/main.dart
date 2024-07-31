@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'screen/login_screen.dart';
-import 'screen/welcome_page.dart';
-import 'screen/start_screen.dart';
+import 'package:summerproject/speech_to_text_demo.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      debugShowCheckedModeBanner: false,
-      title: 'Start Page',
-      home: StartScreen(),
+    return const MaterialApp(
+      home: SpeechToTextDemo(),
     );
   }
 }
-
